@@ -45,3 +45,13 @@ def sample_words_by_frequency(histogram, n = 1):
         if random_word:
             output_string += random_word + ' '
     return output_string
+
+
+f = open('frankenstein.txt' , 'r')
+file = [word for line in f.read().split('\n') for word in line.split(' ')]
+f.close()
+
+hist = histogram(file)
+text = sample_words_by_frequency(hist, 10)
+print(text)
+# print(len(file))
